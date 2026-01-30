@@ -1,17 +1,349 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Miguel Ramos Quintana personal page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miguel Ramos | Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --bg-card: #ffffff;
+      --text: #1f2937;
+      --text-secondary: #6b7280;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --border: #e5e7eb;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    header {
+      margin-bottom: 4rem;
+    }
+    h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 2.75rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.125rem;
+    }
+    nav {
+      margin-top: 2rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    section {
+      margin-bottom: 4rem;
+    }
+    h2 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+    .about p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .contact-grid a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.75rem 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .contact-grid a:hover {
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }
+    .job {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .job:last-child {
+      border-bottom: none;
+    }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+    .job-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+    .job-date {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    .job-company {
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    .job ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .job li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    .job li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7rem;
+      width: 6px;
+      height: 6px;
+      background: var(--accent-light);
+      border-radius: 50%;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.625rem;
+    }
+    .skill {
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    .certs {
+      list-style: none;
+    }
+    .certs li {
+      padding: 0.5rem 0;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .certs li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 600;
+    }
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 2rem 1rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      nav {
+        gap: 1.25rem;
+      }
+      .job-header {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div>
-  <h3>Info</h3>
-    <p>Some info and links of interest</p>
-    <div>
-      <h4>Links</h4>
-        <a href="https://www.hackerrank.com/migue1990" target="_blank">Hacker Rank</a>
-        <a href="https://www.linkedin.com/in/miguel-ramos-quintana-2154b974/" target="_blank">Linkedin</a>
+  <div class="container">
+    <header>
+      <h1>Miguel Ramos</h1>
+      <p class="subtitle">Software Engineer</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>I like building things people actually use. I'm drawn to hard problems—especially the puzzle of making something complex run simply and fast. I research until I understand, and I choose tools that are solid over tools that are shiny. The best part of this job is seeing your work show up in someone else's life.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <a href="mailto:migue1990@gmail.com">migue1990@gmail.com</a>
+        <a href="https://linkedin.com/in/miguel-ramos-quintana" target="_blank">LinkedIn</a>
+        <a href="https://github.com/mrquintana" target="_blank">GitHub</a>
       </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Senior Software Engineer</span>
+          <span class="job-date">Mar 2025 – Present</span>
+        </div>
+        <div class="job-company">Prediktive - Accela</div>
+        <ul>
+          <li>Fixed 20+ security vulnerabilities across Java/Spring Boot microservices and Angular frontend for PCI compliance</li>
+          <li>Built multi-channel notification system with event-driven architecture using Azure Service Bus</li>
+          <li>Implemented CI/CD pipeline with GitHub Actions, Podman, and Azure Container Apps</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Principal Engineer</span>
+          <span class="job-date">Jun 2021 – Dec 2024</span>
+        </div>
+        <div class="job-company">Altimetrik - PayPal</div>
+        <ul>
+          <li>Optimized caching strategy in transaction fee microservice, reducing memory and CPU usage by 10%</li>
+          <li>Eliminated per-request reflection in high-traffic service handling millions of daily transactions</li>
+          <li>Diagnosed JVM performance issues and evaluated G1GC migration for lower GC pause times</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Senior Software Engineer</span>
+          <span class="job-date">Jul 2020 – Jun 2021</span>
+        </div>
+        <div class="job-company">EPAM - Hulu</div>
+        <ul>
+          <li>Maintained Java/Spring microservices at 80K+ RPS for 30M+ subscribers</li>
+          <li>Built "Mark as Watched" feature with Kinesis, DynamoDB, and LaunchDarkly feature flags</li>
+          <li>Debugged production issues by analyzing DataDog logs and tracing to ElastiCache Redis</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Senior Software Engineer</span>
+          <span class="job-date">Dec 2018 – Jul 2020</span>
+        </div>
+        <div class="job-company">EPAM - Thomson Reuters</div>
+        <ul>
+          <li>Migrated legacy Java EE 5 financial system to Grails/Spring Boot with 80%+ test coverage</li>
+          <li>Contributed to AngularJS frontend in Financial Services division</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Senior SDET</span>
+          <span class="job-date">Aug 2017 – Dec 2018</span>
+        </div>
+        <div class="job-company">Softtek - Sterling</div>
+        <ul>
+          <li>Built 100+ functional tests with Java/Selenium using Page Object Model</li>
+          <li>Transitioned to fullstack role modernizing forms with React and Redux</li>
+          <li>Mentored junior SDETs on test automation best practices</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Software Engineer</span>
+          <span class="job-date">Jun 2013 – Aug 2017</span>
+        </div>
+        <div class="job-company">AllData (AutoZone)</div>
+        <ul>
+          <li>Built real-time monitoring dashboard with WebSockets tracking 50 VMs</li>
+          <li>Designed scrapers downloading tens of thousands of OEM repair manuals</li>
+          <li>Led scraper architecture and mentored junior developers</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <span class="skill">Java</span>
+        <span class="skill">Python</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Spring Boot</span>
+        <span class="skill">Kafka</span>
+        <span class="skill">Redis</span>
+        <span class="skill">PostgreSQL</span>
+        <span class="skill">DynamoDB</span>
+        <span class="skill">React</span>
+        <span class="skill">Angular</span>
+        <span class="skill">AWS</span>
+        <span class="skill">Azure</span>
+        <span class="skill">Docker</span>
+        <span class="skill">Kubernetes</span>
+        <span class="skill">Terraform</span>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul class="certs">
+        <li>AWS Solutions Architect Associate</li>
+        <li>AWS Developer Associate</li>
+        <li>Oracle Certified Associate (Java)</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Chihuahua, México</p>
+    </footer>
   </div>
 </body>
 </html>
